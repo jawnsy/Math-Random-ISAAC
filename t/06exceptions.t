@@ -1,9 +1,6 @@
 #!/usr/bin/perl -T
 
-# t/06exceptions.t
-#  Tests fast errors produced with obvious mistakes
-#
-# $Id$
+# Tests exceptions raised with obvious mistakes
 
 use strict;
 use warnings;

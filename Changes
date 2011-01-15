@@ -1,13 +1,9 @@
 {{$NEXT}}
 
           Update MANIFEST.SKIP according to new defaults provided by
-          ExtUtils::Manifest
+          ExtUtils::Manifest (Closes RT#64536)
 
-          Remove pass-through Build.PL
-
-1.001     2011-01-14 21:34:31 America/Toronto
-
-          Add dependency on Software::License (thanks CPAN Testers!)
+          Move package to Dist::Zilla format
 
 1.002     2009-12-03
 

@@ -1,9 +1,6 @@
 #!/usr/bin/perl -T
 
-# t/03memory.t
-#  Tests that there are no memory leaks
-#
-# $Id$
+# Test for memory leaks
 
 use strict;
 use warnings;

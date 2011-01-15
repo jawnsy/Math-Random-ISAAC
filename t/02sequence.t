@@ -1,9 +1,6 @@
 #!/usr/bin/perl -T
 
-# t/03sequence.t
-#  Checks that the generated sequence matches the reference
-#
-# $Id$
+# Check the generated sequence against the reference implementation
 
 use strict;
 use warnings;

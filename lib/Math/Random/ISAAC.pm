@@ -1,27 +1,9 @@
-# Math::Random::ISAAC
-#  An interface that automagically selects the XS or Pure Perl port of the
-#  ISAAC Pseudo-Random Number Generator
-#
-# $Id$
-
 package Math::Random::ISAAC;
+# ABSTRACT: Perl interface to the ISAAC PRNG algorithm
 
 use strict;
 use warnings;
 use Carp ();
-
-=head1 NAME
-
-Math::Random::ISAAC - Perl interface to the ISAAC PRNG Algorithm
-
-=head1 VERSION
-
-Version 1.003 ($Id$)
-
-=cut
-
-our $VERSION = '1.003';
-$VERSION = eval $VERSION;
 
 our $DRIVER = 'PP';
 
@@ -133,18 +115,7 @@ In order to force use of one or the other, simply load the appropriate module:
   use Math::Random::ISAAC::PP;
   my $rng = Math::Random::ISAAC::PP->new();
 
-=head1 COMPATIBILITY
-
-This module was tested under Perl 5.10.0, using Debian Linux. However, because
-it's Pure Perl and doesn't do anything too obscure, it should be compatible
-with any version of Perl that supports its prerequisite modules.
-
-If you encounter any problems on a different version or architecture, please
-contact the maintainer.
-
-=head1 METHODS
-
-=head2 new
+=method new
 
   Math::Random::ISAAC->new( @seeds )
 
@@ -181,7 +152,7 @@ sub new {
   return $self;
 }
 
-=head2 rand
+=method rand
 
   $rng->rand()
 
@@ -214,7 +185,7 @@ sub rand {
   return $self->{backend}->rand();
 }
 
-=head2 irand
+=method irand
 
   $rng->irand()
 
@@ -238,14 +209,6 @@ sub irand {
   return $self->{backend}->irand();
 }
 
-=head1 AUTHOR
-
-Jonathan Yu E<lt>jawnsy@cpan.orgE<gt>
-
-=head2 CONTRIBUTORS
-
-Your name here ;-)
-
 =head1 ACKNOWLEDGEMENTS
 
 =over
@@ -262,63 +225,6 @@ original ISAAC code, upon which C<Math::Random::ISAAC::PP> is heavily based.
 His version is available on Bob's web site, in the SEE ALSO section.
 
 =back
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Math::Random::ISAAC
-
-You can also look for information at:
-
-=over
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Math-Random-ISAAC>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Math-Random-ISAAC>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Math-Random-ISAAC>
-
-=item * CPAN Request Tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Math-Random-ISAAC>
-
-=item * CPAN Testing Service (Kwalitee Tests)
-
-L<http://cpants.perl.org/dist/overview/Math-Random-ISAAC>
-
-=item * CPAN Testers Platform Compatibility Matrix
-
-L<http://www.cpantesters.org/show/Math-Random-ISAAC.html>
-
-=back
-
-=head1 REPOSITORY
-
-You can access the most recent development version of this module at:
-
-L<http://svn.ali.as/cpan/trunk/Math-Random-ISAAC>
-
-If you are a CPAN developer and would like to make modifications to the code
-base, please contact Adam Kennedy E<lt>adamk@cpan.orgE<gt>, the repository
-administrator. I only ask that you contact me first to discuss the changes you
-wish to make to the distribution.
-
-=head1 FEEDBACK
-
-Please send relevant comments, rotten tomatoes and suggestions directly to the
-maintainer noted above.
-
-If you have a bug report or feature request, please file them on the CPAN
-Request Tracker at L<http://rt.cpan.org>. If you are able to submit your bug
-report in the form of failing unit tests, you are B<strongly> encouraged to do
-so.
 
 =head1 SEE ALSO
 
@@ -340,12 +246,6 @@ notes that the time complexity is B<Tmet = 4.67*10^1240>, so it remains a
 secure cipher for practical applications.
 
 =head1 CAVEATS
-
-=head2 KNOWN BUGS
-
-There are no known bugs as of this release.
-
-=head2 LIMITATIONS
 
 =over
 
@@ -369,32 +269,6 @@ even be necessary or useful. File a bug report with an explanation why and
 I'll consider adding it to the next release.
 
 =back
-
-=head1 QUALITY ASSURANCE METRICS
-
-=head2 TEST COVERAGE
-
-  File                     stmt   bran   cond   sub    pod   total
-  ----------------------- ------ ------ ------ ------ ------ ------
-  Math/Random/ISAAC.pm    100.0  100.0  n/a    100.0  100.0  100.0
-  Math/Random/ISAAC/PP.pm 100.0  100.0  n/a    100.0  100.0  100.0
-  Total                   100.0  100.0  n/a    100.0  100.0  100.0
-
-=head1 LICENSE
-
-In a perfect world, I could just say that this package and all of the code
-it contains is Public Domain. It's a bit more complicated than that; you'll
-have to read the included F<LICENSE> file to get the full details.
-
-=head1 DISCLAIMER OF WARRANTY
-
-The software is provided "AS IS", without warranty of any kind, express or
-implied, including but not limited to the warranties of merchantability,
-fitness for a particular purpose and noninfringement. In no event shall the
-authors or copyright holders be liable for any claim, damages or other
-liability, whether in an action of contract, tort or otherwise, arising from,
-out of or in connection with the software or the use or other dealings in
-the software.
 
 =cut
 

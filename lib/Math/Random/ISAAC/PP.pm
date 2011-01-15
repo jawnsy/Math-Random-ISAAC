@@ -1,26 +1,9 @@
-# Math::Random::ISAAC::PP
-#  A Pure Perl port of the ISAAC Pseudo-Random Number Generator
-#
-# $Id$
-
 package Math::Random::ISAAC::PP;
+# ABSTRACT: Pure Perl port of the ISAAC PRNG algorithm
 
 use strict;
 use warnings;
 use Carp ();
-
-=head1 NAME
-
-Math::Random::ISAAC::PP - Pure Perl port of the ISAAC PRNG Algorithm
-
-=head1 VERSION
-
-Version 1.002 ($Id$)
-
-=cut
-
-our $VERSION = '1.002';
-$VERSION = eval $VERSION;
 
 =head1 SYNOPSIS
 
@@ -59,9 +42,7 @@ Example code:
 
 See L<Math::Random::ISAAC> for the full description.
 
-=head1 METHODS
-
-=head2 new
+=method new
 
   Math::Random::ISAAC::PP->new( @seeds )
 
@@ -99,7 +80,7 @@ sub new {
   return $self;
 }
 
-=head2 rand
+=method rand
 
   $rng->rand()
 
@@ -118,7 +99,7 @@ sub rand {
   return ($self->irand() / (2**32-1));
 }
 
-=head2 irand
+=method irand
 
   $rng->irand()
 
@@ -359,32 +340,9 @@ sub _randinit
   return;
 }
 
-=head1 AUTHOR
-
-Jonathan Yu E<lt>jawnsy@cpan.orgE<gt>
-
 =head1 SEE ALSO
 
 L<Math::Random::ISAAC>
-
-=head1 SUPPORT
-
-Please file bugs for this module under the C<Math::Random::ISAAC>
-distribution. For more information, see L<Math::Random::ISAAC>'s perldoc.
-
-=head1 LICENSE
-
-This has the same copyright and licensing terms as L<Math::Random::ISAAC>.
-
-=head1 DISCLAIMER OF WARRANTY
-
-The software is provided "AS IS", without warranty of any kind, express or
-implied, including but not limited to the warranties of merchantability,
-fitness for a particular purpose and noninfringement. In no event shall the
-authors or copyright holders be liable for any claim, damages or other
-liability, whether in an action of contract, tort or otherwise, arising from,
-out of or in connection with the software or the use or other dealings in
-the software.
 
 =cut
 
