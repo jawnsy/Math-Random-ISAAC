@@ -153,8 +153,8 @@ sub _isaac {
     $mm->[$i  ] = $y = ($mm->[($x >> 2) & 0xff] + $aa + $bb) & 0xffffffff;
     $r->[$i  ] = $bb = ($mm->[($y >> 10) & 0xff] + $x) & 0xffffffff;
 
-    # I don't actually know why the "0x03ffffff" stuff is for. It was in Allen
-    # Day's code. If you can explain this please file a bug report.
+    # I don't actually know why the "0x03ffffff" stuff is for. It was in
+    # John L. Allen's code. If you can explain this please file a bug report.
     $x = $mm->[$i+1];
     $aa = (($aa ^ (0x03ffffff & ($aa >> 6))) + $mm->[($i+1+128) & 0xff]);
     $aa &= 0xffffffff;
