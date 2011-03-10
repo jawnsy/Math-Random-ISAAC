@@ -3,8 +3,6 @@
 # examples/benchmark.pl
 #  Compare the ISAAC RNG implementations between each other, and between
 #  other algorithms.
-#
-# $Id$
 
 use strict;
 use warnings;
@@ -24,7 +22,7 @@ benchmark.pl - Test performance of various random number generators
 
 =head1 VERSION
 
-Version 1.0 ($Id$)
+Version 1.0
 
 =cut
 
