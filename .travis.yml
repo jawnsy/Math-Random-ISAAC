@@ -7,12 +7,19 @@ perl:
   - "5.12"
   - "5.10"
 sudo: false
-env: PERL_CPANM_OPT="--notest --force --skip-satisfied"
+env:
+  PERL_CPANM_OPT: "--notest --force --skip-satisfied"
 before_install:
   - "cpanm Dist::Zilla"
   - "dzil authordeps | cpanm"
   - "dzil listdeps --author | cpanm"
   - "dzil build"
-install: "dzil listdeps | cpanm"
-script: "dzil test --release"
-
+install:
+  - "dzil listdeps | cpanm"
+script:
+  - "dzil test --release"
+after_success:
+  # For collection of code coverage metrics
+  - "cpanm Devel::Cover::Report::Codecov"
+  - "cpanm Dist::Zilla::App::Command::cover"
+  - "dzil cover -report codecov"
