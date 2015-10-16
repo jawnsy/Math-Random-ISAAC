@@ -229,22 +229,34 @@ His version is available on Bob's web site, in the SEE ALSO section.
 
 =head1 SEE ALSO
 
+=over
+
+=item *
+
 L<Math::Random::ISAAC::XS>, the C/XS optimized version of this module, which
 will be used automatically if available.
 
-L<http://burtleburtle.net/bob/rand/isaacafa.html>, Bob Jenkins' page about
-ISAAC, which explains the algorithm as well as potential attacks.
+=item *
 
-L<http://eprint.iacr.org/2006/438.pdf>, a paper entitled "On the pseudo-random
-generator ISAAC," which claims there are many seeds which will produce
-non-uniform results. The author, Jean-Philippe Aumasson, argues ISAAC should
-be using rotations (circular shifts) instead of normal shifts to increase
-diffusion of the state, among other things.
+L<Bob Jenkins' page about ISAAC|http://burtleburtle.net/bob/rand/isaacafa.html>,
+which explains the algorithm as well as potential attacks.
 
-L<http://eprint.iacr.org/2001/049.pdf>, a paper by Marina Pudovkina discussing
-plaintext attacks on the ISAAC keystream generator. Among other things, it
-notes that the time complexity is B<Tmet = 4.67*10^1240>, so it remains a
-secure cipher for practical applications.
+=item *
+
+Jean-Philippe Aumasson, L<On the pseudo-random generator ISAAC|https://eprint.iacr.org/2006/438>.
+IACR ePrint Archive, Report 2006/438.  The paper discusses seeds that produce
+non-uniform results and introduces a variant called ISAAC+, which uses rotations
+(circular shifts) instead of normal shifts to increase diffusion of the internal
+state.
+
+=item *
+
+Marina Pudovkina, L<A known plaintext attack on the ISAAC keystream
+generator|https://eprint.iacr.org/2001/049>, which proves that the algorithm
+is cryptographically secure.  It also provides an estimated time complexity
+of B<Tmet = 4.67*10^1240> for recovering the seed given the output.
+
+=back
 
 =head1 CAVEATS
 
