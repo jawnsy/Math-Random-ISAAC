@@ -20,21 +20,22 @@ if ($@) {
 
 =head1 DESCRIPTION
 
-As with other Pseudo-Random Number Generator (PRNG) algorithms like the
-Mersenne Twister (see L<Math::Random::MT>), this algorithm is designed to
-take some seed information and produce seemingly random results as output.
+ISAAC (Indirection, Shift, Accumulate, Add, and Count) is a
+L<Cryptographically Secure Pseudorandom Number Generator|
+https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator>
+(CSPRNG) that quickly produces high-quality random data.  The results are
+uniformly distributed, unbiased, and unpredictable unless you know the seed.
+Despite this, the algorithm is very fast: on average, it requires only 18.75
+processor cycles to generate each 32-bit value.  As a result, ISAAC is
+suitable for applications where a significant amount of random data needs to
+be produced quickly, such as solving using the Monte Carlo method or for
+games.
 
-However, ISAAC (Indirection, Shift, Accumulate, Add, and Count) has different
-goals than these commonly used algorithms. In particular, it's really fast -
-on average, it requires only 18.75 machine cycles to generate a 32-bit value.
-This makes it suitable for applications where a significant amount of random
-data needs to be produced quickly, such solving using the Monte Carlo method
-or for games.
-
-The results are uniformly distributed, unbiased, and unpredictable unless
-you know the seed. The algorithm was published by Bob Jenkins in the late
-90s and despite the best efforts of many security researchers, no feasible
-attacks have been found to date.
+The algorithm was published by Bob Jenkins in 1996, along with a reference
+implementation, and despite the best efforts of many security researchers, no
+feasible attacks have been identified to date.  For more information, see the
+L<algorithm description|http://burtleburtle.net/bob/rand/isaac.html> and
+L<reference implementation|http://burtleburtle.net/bob/rand/isaacafa.html>.
 
 =head2 USAGE WARNING
 
