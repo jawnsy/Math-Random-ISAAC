@@ -27,13 +27,13 @@ feasible attacks have been identified to date.  For more information, see the
 Usage
 -----
 
-  use Math::Random::ISAAC;
+    use Math::Random::ISAAC;
 
-  my $rng = Math::Random::ISAAC->new(@seeds);
+    my $rng = Math::Random::ISAAC->new(@seeds);
 
-  for (0..30) {
-    print 'Result: ' . $rng->irand() . "\n";
-  }
+    for (0..30) {
+      print 'Result: ' . $rng->irand() . "\n";
+    }
 
 Copyright and License
 ---------------------
